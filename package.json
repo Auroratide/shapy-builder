@@ -25,6 +25,7 @@
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "babel-polyfill": "^6.26.0",
     "css-loader": "^2.1.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
@@ -36,6 +37,9 @@
     "webpack-cli": "^3.3.0"
   },
   "jest": {
+    "setupFiles": [
+      "<rootDir>/jest.init.js"
+     ],
     "moduleNameMapper": {
       "\\.(css)$": "identity-obj-proxy",
       "style$": "identity-obj-proxy"
