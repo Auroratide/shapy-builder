@@ -32,7 +32,7 @@ describe('<ShapyBuilder />', () => {
     });
 
     it('should change the shapy shape when a new shape is selected', () => {
-      wrapper = mount(<ShapyBuilder />);
+      wrapper = mount(<ShapyBuilder shapes={['circle', 'square']} />);
 
       changeShape(1);
       expect(shapyShape()).toEqual('square');
