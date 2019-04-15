@@ -1,5 +1,8 @@
 .shapy {
   width: 10rem;
   height: 10rem;
+}
+
+.shapy.circle {
   border-radius: 10rem;
 }

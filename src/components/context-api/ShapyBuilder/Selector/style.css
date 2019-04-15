@@ -1,0 +1,9 @@
+.option {
+  display: inline-block;
+  border: 1px solid black;
+  margin: 0 1rem;
+}
+
+.option.selected {
+  background: red;
+}

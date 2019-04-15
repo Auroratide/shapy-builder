@@ -17,9 +17,11 @@ describe('<ShapyBuilder />', () => {
         value: color
       }
     });
+    const changeShape = (n) => wrapper.find('.option').at(n).simulate('click');
     const shapyColor = () => wrapper.find(Shapy).props().color;
+    const shapyShape = () => wrapper.find(Shapy).props().shape;
 
-    it('should change the shapy color when a new color is selected', async () => {
+    it('should change the shapy color when a new color is selected', () => {
       wrapper = mount(<ShapyBuilder />);
 
       changeColor('#444444');
@@ -27,6 +29,16 @@ describe('<ShapyBuilder />', () => {
 
       changeColor('#555555');
       expect(shapyColor()).toEqual('#555555');
+    });
+
+    it('should change the shapy shape when a new shape is selected', () => {
+      wrapper = mount(<ShapyBuilder />);
+
+      changeShape(1);
+      expect(shapyShape()).toEqual('square');
+
+      changeShape(0);
+      expect(shapyShape()).toEqual('circle');
     });
   });
 });
