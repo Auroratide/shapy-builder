@@ -1,6 +1,7 @@
 import React from 'react';
+import ContextApiApp from '../context-api/ContextApiApp';
 
 const App = () =>
-  <div>Hello world</div>;
+  <ContextApiApp />;
 
 export default App;
