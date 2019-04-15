@@ -14,7 +14,7 @@ ShapyOptions.Provider = ({ children }) => {
       setShapes(data.shapes);
       setEyes(data.eyes);
     });
-  });
+  }, []);
 
   return <ShapyOptions.Context.Provider value={{ shapes, eyes }}>
     {children}
