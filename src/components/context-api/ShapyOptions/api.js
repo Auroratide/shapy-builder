@@ -7,6 +7,7 @@ export const get = () => new Promise(resolve => setTimeout(() =>
       '<path d="M 50 50 l 100 0 l 0 100 l -100 0 Z" />'
     ],
     eyes: [
-      '<ellipse cx="85" cy="85" rx="10" ry="16" fill="white" stroke="black" stroke-width="2" /><ellipse cx="120" cy="85" rx="10" ry="16" fill="white" stroke="black" stroke-width="2" /><circle cx="87" cy="90" r="8" fill="black" /><circle cx="122" cy="90" r="8" fill="black" />'
+      '<ellipse cx="85" cy="85" rx="10" ry="16" fill="white" stroke="black" stroke-width="2" /><ellipse cx="120" cy="85" rx="10" ry="16" fill="white" stroke="black" stroke-width="2" /><circle cx="87" cy="90" r="8" fill="black" /><circle cx="122" cy="90" r="8" fill="black" />',
+      '<path d="M 75 85 A 10 12 0 0 1 95 85" stroke="black" stroke-width="4" fill="transparent" /><path d="M 110 85 A 10 12 0 0 1 130 85" stroke="black" stroke-width="4" fill="transparent" />'
     ]
   }), DELAY));
