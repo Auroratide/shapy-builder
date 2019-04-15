@@ -1,11 +1,10 @@
 import React from 'react';
 import ShapyOptions from '../ShapyOptions';
+import Shapy from '../Shapy';
 
 const ContextApiApp = () =>
   <ShapyOptions.Provider>
-    <ShapyOptions.Consumer>{({ shapes }) => {
-      return <div>{shapes}</div>;
-    }}</ShapyOptions.Consumer>
+    <Shapy />
   </ShapyOptions.Provider>;
 
 export default ContextApiApp;

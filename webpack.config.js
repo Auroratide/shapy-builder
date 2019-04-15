@@ -17,8 +17,14 @@ module.exports = {
       test: /\.css$/,
       use: [ {
         loader: MiniCssExtractPlugin.loader,
-      }, "css-loader" ]
-    }, {
+      }, {
+        loader: 'css-loader',
+        options: {
+          importLoaders: 1,
+          modules: true,
+          localIdentName: '[local]-[hash:base64:8]'
+        }
+    } ] }, {
       test: /\.jsx?$/,
       exclude: /node_modules/,
       loader: 'babel-loader'
