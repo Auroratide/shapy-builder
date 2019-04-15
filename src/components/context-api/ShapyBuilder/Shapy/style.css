@@ -1,3 +1,9 @@
 .shapy {
-  display: block;
+  position: relative;
+}
+
+.eyes {
+  position: absolute;
+  top: 0;
+  left: 0;
 }

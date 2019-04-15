@@ -3,6 +3,9 @@ import SvgString from '../SvgString';
 import styles from './style';
 
 const Shapy = ({ shape, eyes, color }) =>
-  <SvgString className={styles.shapy} fill={color} string={shape} />;
+  <div className={styles.shapy}>
+    <SvgString fill={color} string={shape} />
+    <SvgString className={styles.eyes} string={eyes} />
+  </div>;
 
   export default Shapy;
