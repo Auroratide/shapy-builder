@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SvgString from '../SvgString';
 import classnames from 'classnames';
 import styles from './style';
 
@@ -7,7 +8,7 @@ const Selector = ({ options, onSelect }) => {
 
   return <div>
     {options.map((option, i) =>
-      <span
+      <button
         className={classnames(
           styles.option,
           {[styles.selected]: i === selected}
@@ -18,8 +19,8 @@ const Selector = ({ options, onSelect }) => {
           onSelect(option);
         }}
       >
-        {option}
-      </span>
+        <SvgString string={option} scale={0.5} />
+      </button>
     )}
   </div>;
 };

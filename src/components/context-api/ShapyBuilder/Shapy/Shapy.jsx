@@ -1,17 +1,8 @@
 import React from 'react';
+import SvgString from '../SvgString';
 import styles from './style';
 
-const createMarkup = (html) => ( {
-  __html: html
-} );
-
 const Shapy = ({ shape, eyes, color }) =>
-  <svg
-    className={styles.shapy}
-    width="200px"
-    height="200px"
-    fill={color}
-    dangerouslySetInnerHTML={createMarkup(shape)}
-  />;
+  <SvgString className={styles.shapy} fill={color} string={shape} />;
 
-export default Shapy;
+  export default Shapy;
