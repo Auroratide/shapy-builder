@@ -19,10 +19,10 @@ describe('<ShapyOptions />', () => {
 
     it('should get state from the api', async () => {
       const wrapper = mount(<ShapyOptions.Provider>
-        <ShapyOptions.Consumer>{({ shapes, eyes }) =>
+        <ShapyOptions.Consumer>{({ query }) =>
           <div>
-            <p>{shapes}</p>
-            <p>{eyes}</p>
+            <p>{query.shapes()}</p>
+            <p>{query.eyes()}</p>
           </div>
         }</ShapyOptions.Consumer>
       </ShapyOptions.Provider>);

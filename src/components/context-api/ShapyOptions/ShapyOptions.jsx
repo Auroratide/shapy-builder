@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Query from './query';
 import * as api from './api';
 
 const ShapyOptions = {};
@@ -6,17 +7,15 @@ const ShapyOptions = {};
 ShapyOptions.Context = React.createContext();
 
 ShapyOptions.Provider = ({ children }) => {
-  const [ shapes, setShapes ] = useState([]);
-  const [ eyes, setEyes ] = useState([]);
+  const [ query, setQuery ] = useState(new Query());
 
   useEffect(() => {
     api.get().then(data => {
-      setShapes(data.shapes);
-      setEyes(data.eyes);
+      setQuery(new Query(data));
     });
   }, []);
 
-  return <ShapyOptions.Context.Provider value={{ shapes, eyes }}>
+  return <ShapyOptions.Context.Provider value={{ query }}>
     {children}
   </ShapyOptions.Context.Provider>;
 };

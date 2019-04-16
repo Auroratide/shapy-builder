@@ -4,8 +4,8 @@ import ShapyBuilder from '../ShapyBuilder';
 
 const ContextApiApp = () =>
   <ShapyOptions.Provider>
-    <ShapyOptions.Consumer>{({ shapes, eyes }) =>
-      <ShapyBuilder shapes={shapes} eyes={eyes} />
+    <ShapyOptions.Consumer>{({ query }) =>
+      <ShapyBuilder shapes={query.shapes()} eyes={query.eyes()} />
     }</ShapyOptions.Consumer>
   </ShapyOptions.Provider>;
 
