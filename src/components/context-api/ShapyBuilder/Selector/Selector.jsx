@@ -6,7 +6,7 @@ import styles from './style';
 const Selector = ({ options, onSelect }) => {
   const [ selected, setSelected ] = useState(0);
 
-  return <div>
+  return <div className={styles.selector}>
     {options.map((option, i) =>
       <button
         className={classnames(
@@ -19,7 +19,7 @@ const Selector = ({ options, onSelect }) => {
           onSelect(option);
         }}
       >
-        <SvgString string={option} scale={0.5} />
+        <SvgString className={styles.svg} string={option} scale={0.33333} />
       </button>
     )}
   </div>;

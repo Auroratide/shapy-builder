@@ -1,9 +1,25 @@
+.selector {
+  display: flex;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
 .option {
-  display: inline-block;
-  border: 1px solid black;
-  margin: 0 1rem;
+  margin: 0.25em 0.75em;
+  padding: 0.25em;
+  border-radius: 0.25em;
+  background: none;
+  border: 0 solid #777;
+  font-size: 1rem;
 }
 
 .option.selected {
-  background: red;
+  margin: 0 0.5em;
+  border-width: 0.25em;
+}
+
+.svg {
+  display: block;
+  background: #FFF;
+  border: 0.0625em solid #BBB;
 }
