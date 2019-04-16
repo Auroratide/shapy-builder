@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ColorPicker = ({ onSelect }) =>
-  <input type="color" onChange={e => onSelect(e.target.value)} />;
+const ColorPicker = ({ initialValue, onSelect }) =>
+  <input type="color" defaultValue={initialValue} onChange={e => onSelect(e.target.value)} />;
 
 export default ColorPicker;
