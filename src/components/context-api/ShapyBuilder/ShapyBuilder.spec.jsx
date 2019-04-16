@@ -40,5 +40,16 @@ describe('<ShapyBuilder />', () => {
       changeShape(0);
       expect(shapyShape()).toEqual('circle');
     });
+
+    it('should update the shape when the shapes prop is updated', () => {
+      wrapper = mount(<ShapyBuilder shapes={[]} />);
+
+      expect(shapyShape()).toEqual('');
+
+      wrapper.setProps({ shapes: ['circle'] });
+      wrapper.update();
+
+      expect(shapyShape()).toEqual('circle');
+    });
   });
 });

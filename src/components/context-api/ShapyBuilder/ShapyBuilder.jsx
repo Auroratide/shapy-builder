@@ -9,8 +9,10 @@ const ShapyBuilder = ({ shapes, eyes }) => {
   const [ eye, setEye ] = useState('');
 
   useEffect(() => {
-    setShape(shapes[0]);
-    setEye(eyes[0]);
+    if(shapes.length > 0)
+      setShape(shapes[0]);
+    if(eyes.length > 0)
+      setEye(eyes[0]);
   }, [shapes, eyes]);
 
   return <div>
