@@ -4,8 +4,8 @@ import styles from './style';
 
 const Shapy = ({ shape, eyes, color }) =>
   <div className={styles.shapy}>
-    <SvgString fill={color} string={shape} />
-    <SvgString className={styles.eyes} string={eyes} />
+    <SvgString fill={color} string={shape} scale={1.3333} />
+    <SvgString className={styles.eyes} string={eyes} scale={1.3333} />
   </div>;
 
   export default Shapy;
