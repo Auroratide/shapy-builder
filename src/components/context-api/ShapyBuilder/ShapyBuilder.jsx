@@ -1,19 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Shapy from './Shapy';
 import ColorPicker from './ColorPicker';
 import Selector from './Selector';
+import { withDelayedInitialValue } from './hooks';
 
 const ShapyBuilder = ({ shapes, eyes }) => {
   const [ color, setColor ] = useState('black');
-  const [ shape, setShape ] = useState('');
-  const [ eye, setEye ] = useState('');
-
-  useEffect(() => {
-    if(shapes.length > 0)
-      setShape(shapes[0]);
-    if(eyes.length > 0)
-      setEye(eyes[0]);
-  }, [shapes, eyes]);
+  const [ shape, setShape ] = withDelayedInitialValue(() => shapes[0] || '', shapes).useState();
+  const [ eye, setEye ] = withDelayedInitialValue(() => eyes[0] || '', eyes).useState();
 
   return <div>
     <Shapy shape={shape} color={color} eyes={eye} />
