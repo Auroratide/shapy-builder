@@ -4,7 +4,7 @@
   "description": "test",
   "main": "index.js",
   "scripts": {
-    "start": "serve public",
+    "start": "serve --single public",
     "start:watch": "npm run build && npm-run-all --parallel build:webpack:watch start",
     "build": "npm-run-all build:html build:webpack",
     "build:html": "mkdir -p public && cp src/index.html public/index.html",
