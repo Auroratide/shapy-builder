@@ -1,36 +1,37 @@
-import { decorate, observable, autorun } from 'mobx';
+import { decorate, observable, computed, autorun } from 'mobx';
+import Selector from './Selector';
 
 export default class State {
   constructor(shapes = [], eyes = []) {
     this.color = '#448DDD';
-    this.shape = '';
-    this.eye = '';
+    this.shapeSelector = new Selector.State(shapes);
+    this.eyesSelector = new Selector.State(eyes);
 
     autorun(() => {
-      this.shape = shapes[0] || '';
-      this.eye = eyes[0] || '';
+      this.shapeSelector = new Selector.State(shapes);
+      this.eyesSelector = new Selector.State(eyes);
     });
 
     this.setColor = this.setColor.bind(this);
-    this.setShape = this.setShape.bind(this);
-    this.setEye = this.setEye.bind(this);
+  }
+
+  get shape() {
+    return this.shapeSelector.selected || '';
+  }
+
+  get eyes() {
+    return this.eyesSelector.selected || '';
   }
 
   setColor(newColor) {
     this.color = newColor;
   }
-
-  setShape(newShape) {
-    this.shape = newShape;
-  }
-
-  setEye(newEye) {
-    this.eye = newEye;
-  }
 };
 
 decorate(State, {
   color: observable,
-  shape: observable,
-  eye: observable
+  shapeSelector: observable,
+  eyesSelector: observable,
+  shape: computed,
+  eyes: computed
 });

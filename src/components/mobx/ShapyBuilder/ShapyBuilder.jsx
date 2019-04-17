@@ -5,10 +5,10 @@ import Selector from './Selector';
 
 const ShapyBuilder = ({ shapes, eyes, state }) =>
   <div>
-    <Shapy shape={state.shape} color={state.color} eyes={state.eye} />
+    <Shapy shape={state.shape} color={state.color} eyes={state.eyes} />
     <ColorPicker initialValue="#448DDD" onSelect={state.setColor} />
-    <Selector options={shapes} onSelect={state.setShape} />
-    <Selector options={eyes} onSelect={state.setEye} />
+    <Selector state={state.shapeSelector} />
+    <Selector state={state.eyesSelector} />
   </div>;
 
 export default ShapyBuilder;

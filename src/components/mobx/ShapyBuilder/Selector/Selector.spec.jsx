@@ -1,11 +1,12 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import Selector from './Selector';
+import Selector from '.';
+import SelectorPresentation from './Selector';
 
 describe('<Selector />', () => {
   describe('render', () => {
     it('renders', () => {
-      expect(shallow(<Selector />)).toHaveLength(1);
+      expect(shallow(<SelectorPresentation state={new Selector.State()} />)).toHaveLength(1);
     });
   });
 
@@ -17,7 +18,7 @@ describe('<Selector />', () => {
     }, 0);
     
     it('should update the selected option when a new option is clicked', () => {
-      wrapper = mount(<Selector options={[0, 1, 2]} onSelect={jest.fn()} />);
+      wrapper = mount(<Selector state={new Selector.State([0, 1, 2])} />);
       expect(selectedOption()).toBe(0);
 
       select(1);
@@ -27,12 +28,12 @@ describe('<Selector />', () => {
       expect(selectedOption()).toBe(2);
     });
 
-    it('should onSelect for the option clicked', () => {
-      const onSelect = jest.fn();
-      wrapper = mount(<Selector options={['first', 'second']} onSelect={onSelect} />);
+    it('should update the selected option in the state for higher components to read', () => {
+      const state = new Selector.State(['first', 'second']);
+      wrapper = mount(<Selector state={state} />);
 
       select(1);
-      expect(onSelect).toHaveBeenCalledWith('second');
+      expect(state.selected).toEqual('second');
     });
   });
 });
