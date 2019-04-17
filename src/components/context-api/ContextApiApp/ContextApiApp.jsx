@@ -1,7 +1,7 @@
 import React from 'react';
 import ShapyOptions from '../ShapyOptions';
 import ShapyBuilder from '../ShapyBuilder';
-import MainContainer from '../MainContainer/MainContainer';
+import MainContainer from '../MainContainer';
 
 const ContextApiApp = () =>
   <ShapyOptions.Provider>
