@@ -13,11 +13,13 @@ describe('<ContextApiApp />', () => {
 
   describe('behaviour', () => {
     beforeEach(() => {
+      const query = new ShapyOptions.Query({
+        shapes: ['circle'],
+        eyes: ['happy']
+      });
+
       jest.spyOn(ShapyOptions, 'Provider').mockImplementation(({ children }) =>
-        <ShapyOptions.Context.Provider value={{ query: {
-          shapes: () => ['circle'],
-          eyes: () => ['happy']
-        }}}>
+        <ShapyOptions.Context.Provider value={{ query }}>
           {children}
         </ShapyOptions.Context.Provider>
       );

@@ -21,5 +21,6 @@ ShapyOptions.Provider = ({ children }) => {
 };
 
 ShapyOptions.Consumer = ShapyOptions.Context.Consumer;
+ShapyOptions.Query = Query;
 
 export default ShapyOptions;
