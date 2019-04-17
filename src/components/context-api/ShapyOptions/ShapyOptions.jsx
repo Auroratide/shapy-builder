@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Query from './query';
-import * as api from './api';
+import api from './api';
 
 const ShapyOptions = {};
 

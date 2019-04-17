@@ -1,5 +1,5 @@
 import Store from './store';
-import * as api from './api';
+import api from './api';
 
 describe('DataProvider Store', () => {
 

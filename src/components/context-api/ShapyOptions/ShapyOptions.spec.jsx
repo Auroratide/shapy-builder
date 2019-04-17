@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import ShapyOptions from './ShapyOptions';
-import * as api from './api';
+import api from './api';
 
 describe('<ShapyOptions />', () => {
   describe('behaviour', () => {

@@ -1,6 +1,6 @@
 const DELAY = 500;
 
-export const get = () => new Promise(resolve => setTimeout(() =>
+const get = () => new Promise(resolve => setTimeout(() =>
   resolve({
     shapes: [
       '<circle cx="100" cy="100" r="50" />',
@@ -13,3 +13,5 @@ export const get = () => new Promise(resolve => setTimeout(() =>
       '<path d="M75 82 l20 0 a10 15 0 0 1 -20 0 Z" fill="white" stroke="black" stroke-width="2" /><path d="M73 82 l20 0 a5 8 0 0 1 -12 0 Z" fill="black" /><path d="M110 82 l20 0 a10 15 0 0 1 -20 0 Z" fill="white" stroke="black" stroke-width="2" /><path d="M108 82 l20 0 a5 8 0 0 1 -12 0 Z" fill="black" />'
     ]
   }), DELAY));
+
+export default { get };

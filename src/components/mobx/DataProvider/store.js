@@ -1,5 +1,6 @@
 import { decorate, observable } from 'mobx';
-import * as api from './api';
+import api from './api';
+// import api from '../../common/api';
 
 const safeClone = arr => arr ? arr.slice(0) : [];
 
