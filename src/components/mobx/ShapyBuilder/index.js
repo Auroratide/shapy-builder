@@ -3,8 +3,6 @@ import State from './state';
 import ShapyBuilder from './ShapyBuilder';
 
 const storeToProps = ({ store }) => ( {
-  shapes: store.shapes(),
-  eyes: store.eyes(),
   state: new State(store.shapes(), store.eyes())
 } );
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import DataProvider from '../DataProvider';
 import Store from '../DataProvider/store';
-import Shapy from './Shapy';
+import Shapy from '../../common/Shapy';
 import ShapyBuilder from '.';
 import ShapyBuilderPresentation from './ShapyBuilder';
 import State from './state';

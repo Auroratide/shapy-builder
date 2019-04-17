@@ -1,5 +1,5 @@
 import React from 'react';
-import SvgString from '../SvgString';
+import SvgString from '../../../common/SvgString';
 import classnames from 'classnames';
 import styles from './style';
 

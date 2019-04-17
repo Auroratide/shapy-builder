@@ -1,7 +1,7 @@
 import React from 'react';
 import DataProvider from '../DataProvider';
 import ShapyBuilder from '../ShapyBuilder';
-import MainContainer from '../MainContainer';
+import MainContainer from '../../common/MainContainer';
 
 const MobxApp = () =>
   <DataProvider>

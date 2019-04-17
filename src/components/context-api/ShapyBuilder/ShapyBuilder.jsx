@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Shapy from './Shapy';
-import ColorPicker from './ColorPicker';
+import Shapy from '../../common/Shapy';
+import ColorPicker from '../../common/ColorPicker';
 import Selector from './Selector';
 import { withDelayedInitialValue } from './hooks';
 

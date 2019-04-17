@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import Shapy from './Shapy';
+import Shapy from '../../common/Shapy';
 import ShapyBuilder from './ShapyBuilder';
 
 describe('<ShapyBuilder />', () => {
