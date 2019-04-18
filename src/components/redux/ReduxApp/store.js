@@ -1,7 +1,11 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import options from '../OptionsProvider/reducer';
+import builder from '../ShapyBuilder/reducer';
 
-export default createStore(combineReducers({
-  options
+export const create = () => createStore(combineReducers({
+  options,
+  builder
 }), applyMiddleware(thunk));
+
+export default create();
