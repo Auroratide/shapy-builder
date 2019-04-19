@@ -1,7 +1,7 @@
 import React from 'react';
 import Shapy from '../../common/Shapy';
 import ColorPicker from '../../common/ColorPicker';
-import Selector from './Selector';
+import Selector from '../../common/Selector';
 
 const ShapyBuilder = ({
   shapes,
