@@ -14,8 +14,8 @@ const ShapyBuilder = ({ shapes, eyes }) => {
   return <div>
     <Shapy shape={shape} color={color} eyes={eye} />
     <ColorPicker initialValue={INITIAL_COLOR} onSelect={setColor} />
-    <Selector options={shapes} onSelect={setShape} />
-    <Selector options={eyes} onSelect={setEye} />
+    <Selector options={shapes} onSelect={n => setShape(shapes[n])} />
+    <Selector options={eyes} onSelect={n => setEye(eyes[n])} />
   </div>;
 };
 

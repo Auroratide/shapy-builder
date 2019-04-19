@@ -1,14 +1,8 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import Selector from './Selector';
+import { mount } from 'enzyme';
+import SelectorContainer from '.';
 
-describe('<Selector />', () => {
-  describe('render', () => {
-    it('renders', () => {
-      expect(shallow(<Selector />)).toHaveLength(1);
-    });
-  });
-
+describe('<Selector /> - context-api', () => {
   describe('behaviour', () => {
     let wrapper;
     const select = n => wrapper.find('.option').at(n).simulate('click');
@@ -17,7 +11,7 @@ describe('<Selector />', () => {
     }, 0);
     
     it('should update the selected option when a new option is clicked', () => {
-      wrapper = mount(<Selector options={[0, 1, 2]} onSelect={jest.fn()} />);
+      wrapper = mount(<SelectorContainer options={[0, 1, 2]} onSelect={jest.fn()} />);
       expect(selectedOption()).toBe(0);
 
       select(1);
@@ -29,10 +23,10 @@ describe('<Selector />', () => {
 
     it('should onSelect for the option clicked', () => {
       const onSelect = jest.fn();
-      wrapper = mount(<Selector options={['first', 'second']} onSelect={onSelect} />);
+      wrapper = mount(<SelectorContainer options={['first', 'second']} onSelect={onSelect} />);
 
       select(1);
-      expect(onSelect).toHaveBeenCalledWith('second');
+      expect(onSelect).toHaveBeenCalledWith(1);
     });
   });
 });
