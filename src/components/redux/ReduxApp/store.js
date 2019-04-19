@@ -3,9 +3,9 @@ import thunk from 'redux-thunk';
 import options from '../OptionsProvider/reducer';
 import builder from '../ShapyBuilder/reducer';
 
-export const create = () => createStore(combineReducers({
+export const create = (initialState) => createStore(combineReducers({
   options,
   builder
-}), applyMiddleware(thunk));
+}), initialState, applyMiddleware(thunk));
 
 export default create();

@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import { create } from '../ReduxApp/store';
-import { updateOptions } from '../OptionsProvider/actions';
 import Shapy from '../../common/Shapy';
 import ShapyBuilder from '.';
 import ShapyBuilderPresentation from './ShapyBuilder';
@@ -27,8 +26,12 @@ describe('<ShapyBuilder />', () => {
     const shapyShape = () => wrapper.find(Shapy).props().shape;
 
     const withShapes = shapes => {
-      externalStore = create();
-      externalStore.dispatch(updateOptions(shapes, []));
+      externalStore = create({
+        options: {
+          shapes,
+          eyes: []
+        }
+      });
 
       return {
         mount: component => mount(
