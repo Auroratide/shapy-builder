@@ -1,6 +1,6 @@
 import api from './api';
 
-export const UPDATE_OPTIONS = 'DataProvider::UPDATE_OPTIONS';
+export const UPDATE_OPTIONS = 'OptionsProvider::UPDATE_OPTIONS';
 export const updateOptions = (shapes, eyes) => ( {
   type: UPDATE_OPTIONS,
   shapes,

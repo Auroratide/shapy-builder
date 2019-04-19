@@ -1,7 +1,7 @@
 import Store from './store';
 import api from './api';
 
-describe('DataProvider Store', () => {
+describe('OptionsProvider Store', () => {
 
   beforeEach(() => {
     jest.spyOn(api, 'get').mockResolvedValue({

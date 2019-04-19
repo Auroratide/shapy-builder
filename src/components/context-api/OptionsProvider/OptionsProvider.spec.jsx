@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import ShapyOptions from './ShapyOptions';
+import OptionsProvider from './OptionsProvider';
 import api from './api';
 
 describe('<ShapyOptions />', () => {
@@ -18,14 +18,14 @@ describe('<ShapyOptions />', () => {
     });
 
     it('should get state from the api', async () => {
-      const wrapper = mount(<ShapyOptions.Provider>
-        <ShapyOptions.Consumer>{({ query }) =>
+      const wrapper = mount(<OptionsProvider.Provider>
+        <OptionsProvider.Consumer>{({ query }) =>
           <div>
             <p>{query.shapes()}</p>
             <p>{query.eyes()}</p>
           </div>
-        }</ShapyOptions.Consumer>
-      </ShapyOptions.Provider>);
+        }</OptionsProvider.Consumer>
+      </OptionsProvider.Provider>);
 
       await new Promise(resolve => window.setImmediate(resolve));
       wrapper.update();

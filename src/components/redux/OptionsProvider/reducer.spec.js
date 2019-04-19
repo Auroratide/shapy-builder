@@ -5,7 +5,7 @@ import {
 } from './actions';
 import api from './api';
 
-describe('DataProvider Reducer', () => {
+describe('OptionsProvider Reducer', () => {
   const shapes = ['circle'];
   const eyes = ['happy'];
 

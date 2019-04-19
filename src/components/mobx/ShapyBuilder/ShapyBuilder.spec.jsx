@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import DataProvider from '../DataProvider';
-import Store from '../DataProvider/store';
+import OptionsProvider from '../OptionsProvider';
+import Store from '../OptionsProvider/store';
 import Shapy from '../../common/Shapy';
 import ShapyBuilder from '.';
 import ShapyBuilderPresentation from './ShapyBuilder';
@@ -28,9 +28,9 @@ describe('<ShapyBuilder />', () => {
 
     const withShapes = shapes => ( {
       mount: component => mount(
-        <DataProvider store={externalStore = new Store({ shapes })}>
+        <OptionsProvider store={externalStore = new Store({ shapes })}>
           {component}
-        </DataProvider>
+        </OptionsProvider>
       )
     } );
 

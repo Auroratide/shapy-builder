@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'mobx-react';
 import Store from './store';
 
-export default class DataProvider extends React.Component {
+export default class OptionsProvider extends React.Component {
   componentDidMount() {
     this.props.store.refresh();
   }
@@ -14,6 +14,6 @@ export default class DataProvider extends React.Component {
   }
 };
 
-DataProvider.defaultProps = {
+OptionsProvider.defaultProps = {
   store: new Store()
 };

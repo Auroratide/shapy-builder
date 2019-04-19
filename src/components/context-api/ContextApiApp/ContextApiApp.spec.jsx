@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import ShapyOptions from '../ShapyOptions';
+import OptionsProvider from '../OptionsProvider';
 import ShapyBuilder from '../ShapyBuilder';
 import ContextApiApp from './ContextApiApp';
 
@@ -13,15 +13,15 @@ describe('<ContextApiApp />', () => {
 
   describe('behaviour', () => {
     beforeEach(() => {
-      const query = new ShapyOptions.Query({
+      const query = new OptionsProvider.Query({
         shapes: ['circle'],
         eyes: ['happy']
       });
 
-      jest.spyOn(ShapyOptions, 'Provider').mockImplementation(({ children }) =>
-        <ShapyOptions.Context.Provider value={{ query }}>
+      jest.spyOn(OptionsProvider, 'Provider').mockImplementation(({ children }) =>
+        <OptionsProvider.Context.Provider value={{ query }}>
           {children}
-        </ShapyOptions.Context.Provider>
+        </OptionsProvider.Context.Provider>
       );
     });
   

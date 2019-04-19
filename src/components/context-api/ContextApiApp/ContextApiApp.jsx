@@ -1,17 +1,17 @@
 import React from 'react';
-import ShapyOptions from '../ShapyOptions';
+import OptionsProvider from '../OptionsProvider';
 import ShapyBuilder from '../ShapyBuilder';
 import MainContainer from '../../common/MainContainer';
 
 const ContextApiApp = () =>
-  <ShapyOptions.Provider>
+  <OptionsProvider.Provider>
     <MainContainer>
       <h1>Shapy Builder!</h1>
       <h2>Using React Context API and Hooks</h2>
-      <ShapyOptions.Consumer>{({ query }) =>
+      <OptionsProvider.Consumer>{({ query }) =>
         <ShapyBuilder shapes={query.shapes()} eyes={query.eyes()} />
-      }</ShapyOptions.Consumer>
+      }</OptionsProvider.Consumer>
     </MainContainer>
-  </ShapyOptions.Provider>;
+  </OptionsProvider.Provider>;
 
 export default ContextApiApp;
