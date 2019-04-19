@@ -12,7 +12,7 @@
     "build:webpack:watch": "webpack --watch",
     "test": "jest spec"
   },
-  "author": "",
+  "author": "Timothy Foster",
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.6",
