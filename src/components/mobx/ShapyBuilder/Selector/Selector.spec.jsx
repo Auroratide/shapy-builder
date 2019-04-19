@@ -1,15 +1,8 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import Selector from '.';
-import SelectorPresentation from './Selector';
 
 describe('<Selector />', () => {
-  describe('render', () => {
-    it('renders', () => {
-      expect(shallow(<SelectorPresentation state={new Selector.State()} />)).toHaveLength(1);
-    });
-  });
-
   describe('behaviour', () => {
     let wrapper;
     const select = n => wrapper.find('.option').at(n).simulate('click');
